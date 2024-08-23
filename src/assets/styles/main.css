@@ -1,0 +1,232 @@
+/* Global Styles */
+:root {
+    --primary-color: #216DFC;
+    --secondary-color: #006aff31;
+    --highlight-color: #FF58B2;
+    --background-light: #EAEEF4;
+    --text-color: #585858;
+    --font-family: 'Arial', 'Helvetica', sans-serif;
+    --border-radius: 15px;
+    --box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 1rem;
+    }
+
+    nav ul li {
+        display: flex;
+        align-items: center;
+        color: var(--primary-color);
+        padding: 0.5rem 1.5rem;
+        background-color: var(--secondary-color);
+        border-radius: var(--border-radius);
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    nav ul li img {
+        width: 23px;
+        padding-right: 10px;
+    }
+
+    nav ul li:hover {
+        background-color: var(--primary-color);
+        color: #fff;
+    }
+
+    nav ul li:nth-child(3),
+    nav ul li:nth-child(4) {
+        background-color: #fff;
+    }
+
+    nav ul li:nth-child(3) {
+        border: 2px solid var(--primary-color);
+    }
+
+    nav ul li:nth-child(4) {
+        color: black;
+    }
+
+    button {
+        padding: 0.5rem 1.5rem;
+        background-color: #fff;
+        border-radius: var(--border-radius);
+        border: 2px solid var(--primary-color);
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    button img {
+        width: 20px;
+    }
+
+    button:hover {
+        background-color: var(--primary-color);
+        color: #fff;
+    }
+}
+
+/* Section Styles */
+.sec {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    padding: 2rem;
+}
+
+.wrapper {
+    flex: 1;
+}
+
+.marquee {
+    margin-top: 2.5rem;
+    display: flex;
+    overflow: hidden;
+    gap: 1rem;
+}
+
+.marquee__group {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-shrink: 0;
+    min-width: 100%;
+    animation: scroll-x 20s linear infinite;
+}
+
+.marquee img {
+    width: auto;
+    height: 12.5rem;
+    border-radius: var(--border-radius);
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 0.625rem;
+}
+
+/* Text Section Styles */
+.text {
+    margin: 3rem 0 0 2.5rem;
+}
+
+.text h3 {
+    font-size: 1rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: var(--text-color);
+}
+
+.text h1 {
+    font-size: 3rem;
+    margin: 1.25rem 0;
+    font-weight: 300;
+    color: var(--primary-color);
+}
+
+.text p {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.text a {
+    text-decoration: none;
+    color: var(--primary-color);
+    padding-left: 1.25rem;
+    border-left: 1px solid black;
+    margin-left: 1.25rem;
+    transition: color 0.3s ease;
+}
+
+.text a:hover {
+    color: #003399;
+}
+
+/* Play Section Styles */
+.play img {
+    width: 25rem;
+    position: absolute;
+    top: 2%;
+    right: 10%;
+    transition: transform 0.6s ease;
+    transform: rotate(-20deg);
+}
+
+.play img:hover {
+    transform: rotate(-20deg) scale(1.1);
+}
+
+.play .button {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    gap: 2rem;
+    top: 70%;
+    right: 5%;
+}
+
+.play .button button {
+    padding: 1rem;
+    font-size: 1rem;
+    color: var(--text-color);
+    background-color: var(--background-light);
+    border: none;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease;
+}
+
+.play .button button:nth-child(1) {
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    color: var(--highlight-color);
+    background-color: rgba(255, 88, 178, 0.3);
+}
+
+.play .button button:hover {
+    background-color: rgba(255, 88, 178, 0.5);
+}
+
+/* Animation */
+@keyframes scroll-x {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .sec {
+        flex-direction: column;
+    }
+
+    .play img {
+        width: 20rem;
+        right: 5%;
+    }
+
+    .marquee img {
+        height: 10rem;
+    }
+
+    .text h1 {
+        font-size: 2.5rem;
+    }
+}

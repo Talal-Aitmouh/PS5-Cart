@@ -1,0 +1,39 @@
+.play img {
+    width: 400px;
+    position: absolute;
+    top: 2%;
+    right: 10%;
+    transition: .6s ease;
+    transform: rotate(-20deg);
+}
+
+.play img:hover {
+    transform: scale(1.1);
+}
+
+.play .button {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    gap: 30px;
+    top: 70%;
+    right: 5%;
+}
+
+.play .button button {
+    padding: 15px 20px;
+    font-size: 1rem;
+    color: #585858;
+    background-color: #EAEEF4;
+    border: none;
+    border-radius: 15px;
+}
+
+.play .button button:nth-child(1) {
+    padding: 5px 10px;
+    font-size: 1.5rem;
+    color: #FF58B2;
+    background-color: #ff58b14e;
+    border: none;
+    border-radius: 15px;
+}
