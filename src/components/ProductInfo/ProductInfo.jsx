@@ -3,7 +3,7 @@ import './ProductInfo.css';
 
 const ProductInfo = ({ isModalOpen, setIsModalOpen, cartItems, setCartItems }) => {
   const handleAddToCart = () => {
-    setCartItems([...cartItems, { id: Date.now(), name: 'Playstation 5' }]);
+    setCartItems([...cartItems, { id: Date.now(), name: 'Playstation 5', price: '1000$' }]);
   };
 
   return (
@@ -26,23 +26,26 @@ const ProductInfo = ({ isModalOpen, setIsModalOpen, cartItems, setCartItems }) =
 
 const CartModal = ({ items, setCartItems, onClose }) => {
   const handleRemoveItem = (id) => {
+    
     setCartItems(items.filter(item => item.id !== id));
   };
 
   return (
     <div className="modal-overlay">
       <div className="modal-content">
-        <h2>Cart</h2>
+        <h2>Your Cart({items.length} Item)</h2>
         <ul>
           {items.map(item => (
             <li key={item.id}>
-              {item.name}
-              <button onClick={() => handleRemoveItem(item.id)}>Remove</button>
+             <span>{item.name}</span> 
+             <span>{item.price}</span> 
+              <button onClick={() => handleRemoveItem(item.id)}>X</button>
             </li>
+            
           ))}
         </ul>
-        <button onClick={onClose}>Close</button>
       </div>
+      <button onClick={onClose}>Close</button>
     </div>
   );
 };

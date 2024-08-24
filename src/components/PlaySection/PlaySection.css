@@ -3,13 +3,10 @@
     position: absolute;
     top: 2%;
     right: 10%;
-    transition: .6s ease;
     transform: rotate(-20deg);
 }
 
-.play img:hover {
-    transform: scale(1.1);
-}
+
 
 .play .button {
     display: flex;
@@ -36,4 +33,26 @@
     background-color: #ff58b14e;
     border: none;
     border-radius: 15px;
+}
+
+@media (max-width: 768px){
+    .play img {
+        width: 250px;
+        position: absolute;
+        top: 10%;
+        right: 20%;
+        z-index: -1;
+        transform: rotate(-20deg);
+    }
+    ;.play{
+        order: initial;
+    }
+    .play .button {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        gap: 30px;
+        top: 50%;
+        right: 5%;
+    }
 }

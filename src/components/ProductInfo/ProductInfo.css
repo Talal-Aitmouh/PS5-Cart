@@ -30,26 +30,34 @@
 
 .modal-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.modal-content {
+    top: 10%;
+    right: 5%;
+    z-index: 99;
     background: white;
-    padding: 20px;
     border-radius: 10px;
     width: 300px;
     max-width: 90%;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    box-shadow: 1px 1px 9px -2px rgba(0,0,0,0.4);
 }
 
+.modal-content {
+    padding: 20px;
+    text-align: center;
+    height: 400px;
+    overflow-y: auto;
+}
+.modal-content h2{
+    
+    border-bottom: #585858 solid 1px;
+    padding-bottom: 5px;
+}
 .modal-content ul {
+    margin-top: 20px;
     list-style: none;
     padding: 0;
 }
@@ -57,14 +65,59 @@
 .modal-content li {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 10px;
+    border-bottom: #585858 1px solid;
+    padding: 10px;
+}
+.modal-content li span{
+    margin: 0px 10px;
+}
+.modal-content li button{
+    color: #fc2121;
+    background-color: #fc21213b;
+    border: none;
+    border-radius: 25px;
 }
 
-.modal-content button {
-    background: #FF58B2;
-    color: white;
-    border: none;
+.modal-overlay button {
+    font-size: 15px;
+    background-color: #fff;
+    border: #216DFC 2px solid;
+    color: #216DFC;
     padding: 5px 10px;
-    border-radius: 5px;
+    border-radius: 15px;
     cursor: pointer;
+    text-align: center;
+}
+@media (max-width: 768px){
+    .text {
+        position: absolute;
+        top: 70%;
+    }
+    .text h3 {
+        font-size: 1rem;
+        font-weight: 100;
+        text-transform: uppercase;
+    }
+    
+    .text h1 {
+        font-size: 2rem;
+        margin: 10px 0px;
+        font-weight: 100;
+    }
+    
+    .text p {
+        font-size: .9rem;
+        color: #585858;
+    }
+    
+    .text a {
+        text-decoration: none;
+        color: #216DFC;
+        padding: 0px 20px;
+        border-left: black 1px solid;
+        margin-left: 20px;
+        cursor: pointer;
+    }
 }

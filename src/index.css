@@ -17,3 +17,10 @@
   flex-direction: column;
   width: 50%;
 }
+
+@media (max-width: 768px){
+  .sec{
+    display: block;
+  }
+  
+}
