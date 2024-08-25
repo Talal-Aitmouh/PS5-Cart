@@ -11,7 +11,7 @@ const ProductInfo = ({ isModalOpen, setIsModalOpen, cartItems, setCartItems }) =
       <div className="text">
         <h3>New Consoles</h3>
         <h1>Playstation 5</h1>
-        <p>Shipping in 2 to 4 business days <a href="#details" onClick={handleAddToCart}>Add To Cart</a></p>
+        <p>Shipping in 2 to 4 business days <a href="" onClick={handleAddToCart}>Add To Cart</a></p>
       </div>
       {isModalOpen && (
         <CartModal
